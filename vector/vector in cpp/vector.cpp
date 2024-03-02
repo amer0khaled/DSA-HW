@@ -17,6 +17,12 @@ private:
         *y = temp;
     }
 
+    void swapElements(int indx1, int indx2){
+        int temp = arr[indx1];
+        arr[indx1] = arr[indx2];
+        arr[indx2] = temp;
+    }
+
     void expandCapacity()
     {
         // 1- doubling the acual array size
@@ -38,11 +44,21 @@ private:
         delete[] arr2;
     }
 
+
+    //shifts the elements to right
     void shiftElements(int indx)
     {
         for (int i = size; i > indx; --i)
         {
             arr[i] = arr[i - 1];
+        }
+    }
+
+    /*shifts specific element to left ,not the 
+    whole array*/
+    void shiftElementLeft(int index){
+        if (index > 0){
+            swapElements(index-1, index);
         }
     }
 
@@ -167,6 +183,21 @@ public:
         }
         arr[size - 1] = firstElemnt;
     }
+
+    bool findTransPosition(int value){
+        int valueIndex = find(value);
+        if (valueIndex != -1){
+            shiftElementLeft(valueIndex);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    //amer khaled
+
+
 };
 
 int main()
@@ -183,7 +214,8 @@ int main()
 
     obj.print();
 
-    obj.leftRotate();
+    obj.findTransPosition(3);
+    obj.findTransPosition(3);
 
     obj.print();
 
