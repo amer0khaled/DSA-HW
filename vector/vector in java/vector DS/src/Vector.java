@@ -57,7 +57,7 @@ public class Vector {
     public int findValue(int value){
         for (int i = 0; i < this.size; ++i){
             if (value == this.arr[i]){
-                return value;
+                return i;
             }
         }
 
@@ -148,15 +148,38 @@ public class Vector {
 
         for (int i = 0; i < steps; ++i){
 
-            lastElement
+            lastElement = arr[size - 1];
             for (int j = size-2; j >= 0; --j){
                 arr[j+1] = arr[j];
             }
+            arr[0] = lastElement;
         }
-
 
     }
 
+    public int popElement(int index){
+        int desiredElement = arr[index];
+        for (int i = index + 1; i < this.size; ++i){
+            arr[i - 1] = arr[i];
+        }
+        arr[size - 1] = 0;
+        this.size--;
+        return desiredElement;
+    }
+
+    public boolean findTransPosition(int value){
+        int index = this.findValue(value);
+        if (index != -1){
+            //swap with previous element
+            int temp = arr[index - 1];
+            arr[index - 1] = arr[index];
+            arr[index] = temp;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 
 }

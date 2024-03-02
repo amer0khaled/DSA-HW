@@ -13,7 +13,7 @@ public class Main {
 
         obj.printList();
 
-        obj.leftRotate();
+        obj.findTransPosition(55);
 
         obj.printList();
 
