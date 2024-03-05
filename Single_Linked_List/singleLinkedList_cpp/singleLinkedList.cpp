@@ -231,6 +231,24 @@ public:
         debug_verify_dataIntegrity();
        
     }
+    
+    //sort list using bubble sort [very bad performance]
+    //ToDo: improve this code
+    void sortList(){
+        int listLen = getLength();
+        for (int i = 0; i < listLen - 1; ++i){
+            for (int j = 0; j < listLen - 1 - i; ++j){
+                Node *node1 = get_nth_Node(j);
+                Node *node2 = get_nth_Node(j + 1);
+
+                if (node1->data > node2->data){
+                    int temp = node1->data;
+                    node1->data = node2->data;
+                    node2->data = temp;
+                }
+            }
+        }
+    }
 
     ///////////////////////////////for testing///////////////////////////////////////////////
 
