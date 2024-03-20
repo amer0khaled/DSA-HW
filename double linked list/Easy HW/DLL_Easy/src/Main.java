@@ -12,7 +12,8 @@ public class Main {
         list.print();
 
         DoubleLinkedListMed obj = new DoubleLinkedListMed();
-        obj.swapForwardBackward(list, 2);
+        obj.swapForwardBackward(list, 1);
+
 
         System.out.println("List After:");
         list.print();
