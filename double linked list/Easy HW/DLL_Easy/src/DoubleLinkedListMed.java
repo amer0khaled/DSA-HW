@@ -6,12 +6,7 @@ public class DoubleLinkedListMed {
             front = front.getNext();
             back = back.getPrev();
         }
-
-        if (front == back)
-            return front.getData();
         return back.getData();
-
     }
-
 
 }
