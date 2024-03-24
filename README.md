@@ -7,11 +7,11 @@ and my solution to some of the coding challenges, I am still learning
 
 Languages Used
 ------------------------------------------
-1- Java
-2- C++
+- Java
+- C++
 
 Data Structures
 -----------------------------------------
-1- Vector
-2- Single LinkedList
-3- Doubly LinedList
+- Vector
+- Single LinkedList
+- Double LinkedList
