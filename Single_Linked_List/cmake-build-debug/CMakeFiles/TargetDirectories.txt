@@ -1,0 +1,3 @@
+/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/cmake-build-debug/CMakeFiles/Single_Linked_List.dir
+/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/cmake-build-debug/CMakeFiles/rebuild_cache.dir

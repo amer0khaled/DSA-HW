@@ -69,9 +69,8 @@ public:
         */
 
        //recursive print
-       if (currentNode == nullptr){
+       if (!currentNode)
             return;
-       }
 
        cout << currentNode->data << endl;
        print(currentNode->next);

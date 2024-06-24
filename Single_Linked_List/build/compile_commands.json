@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/build",
+  "command": "/usr/bin/c++ -I\"/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_Easy_HW\" -I\"/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_Med_HW/Med in cpp\" -g -std=gnu++14 -o CMakeFiles/Single_Linked_List.dir/singleLinkedList_cpp/singleLinkedList.cpp.o -c \"/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_cpp/singleLinkedList.cpp\"",
+  "file": "/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_cpp/singleLinkedList.cpp",
+  "output": "CMakeFiles/Single_Linked_List.dir/singleLinkedList_cpp/singleLinkedList.cpp.o"
+},
+{
+  "directory": "/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/build",
+  "command": "/usr/bin/c++ -I\"/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_Easy_HW\" -I\"/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_Med_HW/Med in cpp\" -g -std=gnu++14 -o CMakeFiles/Single_Linked_List.dir/singleLinkedList_Easy_HW/SLL_Easy.cpp.o -c \"/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_Easy_HW/SLL_Easy.cpp\"",
+  "file": "/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_Easy_HW/SLL_Easy.cpp",
+  "output": "CMakeFiles/Single_Linked_List.dir/singleLinkedList_Easy_HW/SLL_Easy.cpp.o"
+},
+{
+  "directory": "/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/build",
+  "command": "/usr/bin/c++ -I\"/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_Easy_HW\" -I\"/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_Med_HW/Med in cpp\" -g -std=gnu++14 -o CMakeFiles/Single_Linked_List.dir/singleLinkedList_Med_HW/Med_in_cpp/SLL_Med.cpp.o -c \"/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_Med_HW/Med in cpp/SLL_Med.cpp\"",
+  "file": "/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/Single_Linked_List/singleLinkedList_Med_HW/Med in cpp/SLL_Med.cpp",
+  "output": "CMakeFiles/Single_Linked_List.dir/singleLinkedList_Med_HW/Med_in_cpp/SLL_Med.cpp.o"
+}
+]
