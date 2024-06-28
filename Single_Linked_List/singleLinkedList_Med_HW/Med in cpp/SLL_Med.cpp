@@ -79,6 +79,33 @@ public:
             cnt++;
         }
     }
+    
+	    void new_rotate_left(ListNode *l, int k) {
+	    int len = l->getLength();
+	    if (len < 2 || k % len == 0) return;
+
+	    //skip useless cycles
+	    k %= len;
+	    
+	    if (len == 2) {
+		for (int i = 0; i < k; ++i)
+		    swapHeadAndTail(l);
+		return;
+	    }
+	    
+	    int indx_new_head = k;
+	    int indx_new_tail = k - 1;
+
+	    Node* old_tail = l->getTail();
+	    Node* old_head = l->getHead();
+	    Node* new_tail = l->get_nth_Node(indx_new_tail);
+	    Node* new_head = l->get_nth_Node(indx_new_head);
+
+	    old_tail->next = old_head;
+	    new_tail->next = nullptr;
+	    l->set_head(new_head);
+	    l->set_tail(new_tail);
+	}
 
     void removeDuplicate(singleLinkedList *list)
     {

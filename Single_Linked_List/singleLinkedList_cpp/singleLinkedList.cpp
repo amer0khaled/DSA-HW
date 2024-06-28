@@ -345,23 +345,23 @@ public:
 
 int main(){
 
-    singleLinkedList obj1;
-
-    for (int i = 0, value = 10; i < 5; ++i, value += 10){
-        obj1.insertEnd(value);
-    }
+    singleLinkedList list1;
+/*
+    for (int i = 0, value = 10; i < 1; ++i, value += 10){
+        list1.insertEnd(value);
+    }*/
     
-    obj1.debug_print_list("List before doing any operatioin");
-    cout << "List size before operations: " << obj1.getLength() << "\n\n";
+    list1.debug_print_list("\n\nList before doing any operatioin");
+    cout << "List size before operations: " << list1.getLength() << "\n\n";
     cout << "\n\n";
 
-    obj1.removeNode(4);
-    obj1.debug_print_list("delete node");
+    list1.removeNode(0);
+    list1.debug_print_list("delete node");
     cout << "\n\n";
 
-    cout << "List size after operations: " << obj1.getLength() << "\n\n";
+    cout << "List size after operations: " << list1.getLength() << "\n\n";
 
-    obj1.debug_verify_dataIntegrity();
+    list1.debug_verify_dataIntegrity();
 
     cout << "\n\n***** No Run Time Error *****\n\n";
     return 0;

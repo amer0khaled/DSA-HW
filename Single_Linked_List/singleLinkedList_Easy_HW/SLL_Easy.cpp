@@ -82,10 +82,7 @@ int main(){
     cout << "List size before operations: " << obj1.getLength() << "\n\n";
     cout << "\n\n";
 
-    insert_sorted(&obj1, 50);
-    insert_sorted(&obj1, 0);
-    insert_sorted(&obj1, 25);
-    insert_sorted(&obj1, 12);
+    reverseList(&obj1);
 
     obj1.debug_print_list("delete node with key");
     cout << "\n\n";
