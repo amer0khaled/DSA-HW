@@ -141,6 +141,18 @@ void swapHeadAndTail(singleLinkedList* l1) {
     }
 }
 
+void remove_last_occurance(singleLinkedList* l1, int key) {
+    int i = 0;
+    int indx = -1;
+    for (Node* node = l1->getHead(); node; node = node->next, ++i) {
+        if (node->data == key )
+            //get last index
+            indx = i;
+    }
+
+    l1->removeNode(indx);
+}
+
 
 void move_back(singleLinkedList &l, int key) {
     int len = l.getLength();
