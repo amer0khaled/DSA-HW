@@ -198,7 +198,15 @@ void move_back(singleLinkedList &l, int key) {
 }
 
 
+int recursive_max(Node* head) {
+    static int mx = INT_MIN;
+    if (!head) return mx;
+    if (mx < head->data) {
+        mx = head->data;
+    }
 
+    recursive_max(head->next);
+}
 
 };
 
