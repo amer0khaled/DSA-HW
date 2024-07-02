@@ -14,42 +14,37 @@ private:
     }
 
 public:
-    void swapHeadTail(singleLinkedList *list)
-    {
+void swapHeadAndTail(singleLinkedList* l1) {
+    auto len = l1->getLength();
 
-        int listlen = list->getLength();
-
-        // if length = 0 or 1
-        if (listlen == 0 || listlen == 1)
-        {
-            return;
-        }
-
-        Node *head = list->getHead();
-        Node *tail = list->getTail();
-        Node *tailPrev = list->get_nth_Node(listlen - 2);
-
-        // if length = 2
-        if (listlen == 2)
-        {
-
-            head->next->next = head;
-            head->next = nullptr;
-
-            list->setHead(tail);
-            list->setTail(head);
-
-            return;
-        }
-
-        // if length > 2
-        tailPrev->next = head;
-        tail->next = head->next;
-        head->next = nullptr;
-
-        list->setHead(tail);
-        list->setTail(head);
+    if (len < 2) return;
+    if (len == 2) {
+        Node *l1_tail = l1->getTail();
+        Node *l1_head = l1->getHead();
+        l1_tail->next = l1_head;
+        l1_head->next = nullptr;
+        l1->set_head(l1_tail);
+        l1->set_tail(l1_head);
+        l1->debug_verify_dataIntegrity();
+        return;
     }
+
+
+    Node *l1_tail = l1->getTail();
+    Node *prev_tail = l1->get_nth_Node(len - 2);
+    Node *l1_head = l1->getHead();
+    Node *next_head = l1_head->next;
+
+
+    l1_tail->next = next_head;
+    prev_tail->next = l1_head;
+    l1_head->next = nullptr;
+
+    l1->set_head(l1_tail);
+    l1->set_tail(l1_head);
+
+    l1->debug_verify_dataIntegrity();
+}
 
     void leftRotate(singleLinkedList *list, int step)
     {
@@ -80,7 +75,7 @@ public:
         }
     }
     
-	    void new_rotate_left(ListNode *l, int k) {
+	void new_rotate_left(singleLinkedList *l, int k) {
 	    int len = l->getLength();
 	    if (len < 2 || k % len == 0) return;
 
@@ -90,7 +85,7 @@ public:
 	    if (len == 2) {
 		for (int i = 0; i < k; ++i)
 		    swapHeadAndTail(l);
-		return;
+		    return;
 	    }
 	    
 	    int indx_new_head = k;
@@ -131,23 +126,52 @@ public:
             }
         }
 
+    }
 
-/*
-        for (int i = 0; i < listlen - 1; ++i){
-            Node *nodei = list->get_nth_Node(i);
-            for (int j = i + 1; j < listlen; ++j){
-                Node *prevnodej = list->get_nth_Node(j - 1);
-                Node *nodej = prevnodej->next;
 
-                if (nodei->data == nodej->data){
-                    list->removeNode(j);
-                }
-            }
+    void remove_duplicate2(singleLinkedList* l, singleLinkedList &l2) {
+        set<int> set_node;
+        for (Node* node = l->getHead(); node; node = node->next) {
+
+        if (set_node.find(node->data) == set_node.end()){
+            set_node.insert(node->data);
+            l2.insertEnd(node->data);
         }
 
-        list->debug_verify_dataIntegrity();
-        */
     }
+}
+
+
+    void move_back(singleLinkedList &l, int key) {
+    int len = l.getLength();
+    while (l.getHead() && l.getHead()->data == key) {
+        Node* temp = l.getHead();
+        l.getTail()->next = temp;
+
+        //update head and tail
+        l.set_head(l.getHead()->next);
+        l.set_tail(temp);
+
+        temp->next = nullptr;
+
+        len--;
+    }
+
+
+    int i = 0;
+    for (Node* cur = l.getHead(); i < len; cur = cur->next, ++i) {
+        Node* target_node = cur->next;
+        if (target_node->data == key) {
+            l.getTail()->next = target_node;
+            cur->next = target_node->next;
+            target_node->next = nullptr;
+            l.set_tail(target_node);
+        }
+    }
+}
+
+
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -177,7 +201,7 @@ int main()
     cout << "length before doing any thing: " << list.getLength();
     cout << "\n\n";
 
-    obj.removeDuplicate(&list);
+    obj.move_back(list, 2);
 
     list.debug_print_list("lsit after doing operation");
     cout << "length after doing operations: " << list.getLength();

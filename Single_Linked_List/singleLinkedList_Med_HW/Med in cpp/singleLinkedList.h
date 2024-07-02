@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cassert>
 #include <climits>
+#include<set>
 
 #include <vector>		// for debug
 #include <algorithm>
@@ -62,6 +63,15 @@ private:
 /////////////////////////////////////////////////////////////////////////////
 
 public:
+
+
+    void set_head(Node* head) {
+        this->head = head;
+    }
+
+    void set_tail(Node *tail) {
+        this->tail = tail;
+    }
 
     void print(Node *currentNode){
 
