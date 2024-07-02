@@ -154,29 +154,43 @@ void remove_last_occurance(singleLinkedList* l1, int key) {
 }
 
 
+void move_to_last(singleLinkedList &l, Node* prev) {
+
+    // head will be moved
+    if (!prev) {
+        Node* target_node = l.getHead();
+        l.getTail()->next = target_node;
+
+        //update head and tail
+        l.set_head(target_node->next);
+        l.set_tail(target_node);
+
+        target_node->next = nullptr;
+        return;
+    }
+
+    Node* target_node = prev->next;
+    l.getTail()->next = target_node;
+    prev->next = prev->next->next;
+    target_node->next = nullptr;
+
+    //update tail
+    l.set_tail(target_node);
+
+}
+
 void move_back(singleLinkedList &l, int key) {
     int len = l.getLength();
     while (l.getHead() && l.getHead()->data == key) {
-        Node* temp = l.getHead();
-        l.getTail()->next = temp;
-
-        //update head and tail
-        l.set_head(l.getHead()->next);
-        l.set_tail(temp);
-
-        temp->next = nullptr;
-
+        move_to_last(l, nullptr);
         len--;
     }
-    
+
     int i = 0;
     for (Node* cur = l.getHead(); i < len;++i) {
         Node* target_node = cur->next;
         if (target_node->data == key) {
-            l.getTail()->next = target_node;
-            cur->next = target_node->next;
-            target_node->next = nullptr;
-            l.set_tail(target_node);
+            move_to_last(l, cur);
         }
         else
             cur = cur->next;
