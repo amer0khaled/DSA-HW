@@ -121,11 +121,11 @@ int main(){
 
     doubleLinkedList list1, list2;
 
-    list1.insert_end(10);
-    list1.insert_end(20);
-    list1.insert_end(30);
-    list1.insert_end(40);
-    list1.insert_end(50);
+    list1.insert_end(1);
+    list1.insert_end(2);
+    list1.insert_end(3);
+    list1.insert_end(2);
+    list1.insert_end(1);
 
 
    
@@ -133,7 +133,7 @@ int main(){
     list1.debug_print_list("list1 before: \n");
     list2.debug_print_list("list2 before: \n");
 
-    merge_2sorted_lists(&list1, &list2);
+    cout << "\n\n" << isPalindrome(list1) << "\n\n";
 
     list1.debug_print_list("list1 after: \n");
     list2.debug_print_list("list2 after: \n");

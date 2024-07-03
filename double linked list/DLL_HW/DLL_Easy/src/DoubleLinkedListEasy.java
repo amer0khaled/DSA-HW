@@ -28,7 +28,8 @@ public class DoubleLinkedListEasy {
     }
 
     public boolean isPalindrome(doubleLinkedList list){
-        for (Node front = list.getHead(), back = list.getTail(); front != back; front = front.getNext(), back = back.getPrev()){
+    	int i = 0;
+        for (Node front = list.getHead(), back = list.getTail(); i <= list.getLength() / 2; ++i, front = front.getNext(), back = back.getPrev()){
             if (front.getData() != back.getData()){
                 return false;
             }
