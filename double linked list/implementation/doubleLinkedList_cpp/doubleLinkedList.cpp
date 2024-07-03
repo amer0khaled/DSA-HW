@@ -160,26 +160,6 @@ public:
 	}
 	////////////////////////////////////////////////////////////
 
-	int getLength(){
-		return this->length;
-	}
-
-	Node* getHead(){
-		return this->head;
-	}
-
-	void setHead(Node *node){
-		this->head = node;
-	}
-
-	Node* getTail(){
-		return this->tail;
-	}
-
-	void setTail(Node *node){
-		this->tail = node;
-	}
-
 	void print() {
 		for (Node* cur = head; cur; cur = cur->getNext())
 			cout << cur->getData() << " ";
@@ -346,4 +326,27 @@ public:
 };
 
 
+int main() {
+
+    doubleLinkedList list;
+
+    
+    list.insert_end(5);
+    list.insert_end(14);
+    list.insert_end(22);
+    list.insert_end(8);
+    list.insert_end(64);
+
+    list.debug_print_list("list before:\n");
+
+    list.delete_with_key(8);
+
+    list.debug_print_list("list after:\n");
+
+    list.debug_verify_data_integrity();
+	// must see it, otherwise RTE
+	cout << "\n\nNO Run Time Error\n";
+
+	return 0;
+}
 
