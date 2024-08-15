@@ -2,6 +2,7 @@
 // Created by Admin on 8/11/2024.
 //
 
+#include <cmath>
 #include "tree_create.h"
 
 
@@ -41,28 +42,81 @@ bool hasPathSum(TreeNode* root, int targetSum) {
     return hasPathSum(root, targetSum, 0);
 }
 
-int sumOfLeftLeaves(TreeNode* current, int updated_sum) {
-    if (!current) return 0;
-
+bool isLeaf(TreeNode* node) {
+    return node && !node->left && !node->right;
 }
 
 int sumOfLeftLeaves(TreeNode* root) {
-    return sumOfLeftLeaves(root, 0);
+    if (!root) return 0;
+
+    int sum = 0;
+    if (isLeaf(root->left))
+        sum += root->left->val;
+
+    sum += sumOfLeftLeaves(root->left);
+    sum += sumOfLeftLeaves(root->right);
+
+    return sum;
 }
+
+int sum_tree(TreeNode* root, int updated_sum = 0) {
+    if (!root) return 0;
+    int sum = root->val;
+    sum += sum_tree(root->left);
+    sum += sum_tree(root->right);
+    return sum;
+}
+
+bool is_full_tree(TreeNode* root) {
+    if (!root) return false;
+    if (isLeaf(root)) return true;
+    if ( (!root->left && root->right) || (!root->right && root->left) ) return false;
+    return is_full_tree(root->left) &&
+            is_full_tree(root->right);
+}
+
+int count_nodes(TreeNode* root) {
+    if (!root) return 0;
+    return count_nodes(root->left) +
+            count_nodes(root->right) + 1;
+}
+
+bool is_perfect_tree(TreeNode* root) {
+    if (!root) return true;
+
+    //check left and right children
+    if (count_nodes(root->left) != count_nodes(root->right)) return false;
+
+    return is_perfect_tree(root->left) &&
+            is_perfect_tree(root->right);
+}
+
+bool is_perfect_tree_v2(TreeNode* root, int level) {
+    //all leaves mus be in the same level (last level)
+    if (isLeaf(root))
+        return level == 0;
+    //check one child
+    if ( (!root->left && root->right) || (!root->right && root->left) ) return false;
+
+    return is_perfect_tree_v2(root->left, level - 1) &&
+            is_perfect_tree_v2(root->right, level - 1);
+}
+
+bool is_perfect_tree_v2(TreeNode* root) {
+    int level = maxDepth(root) - 1;
+    return is_perfect_tree_v2(root, level);
+}
+
 
 int main() {
 
-    BinaryTree tree(5);
-    tree.add( { 4, 11, 7 }, { 'L', 'L', 'L' });
-    tree.add( { 4, 11, 2 }, {  'L', 'L', 'R' });
-    tree.add( { 8, 4, 1 }, { 'R', 'R', 'R'});
-    tree.add({8, 13}, {'R', 'L'});
+    BinaryTree tree(1);
+    tree.add( { 2, 4 }, { 'L', 'L'});
+    tree.add( { 2, 5 }, {  'L', 'R' });
+    tree.add( { 3, 7}, { 'R', 'R'});
+    tree.add({3, 6}, {'R', 'L'});
 
-    cout << hasPathSum(tree.root, 22);
-    //tree.print_inorder();
-    // 7 4 8 2 5 9 1 3 10 6
-
-    return 0;
+    cout << is_perfect_tree_v2(tree.root);
 
     return 0;
 }
