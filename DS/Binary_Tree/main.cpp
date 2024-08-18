@@ -3,6 +3,7 @@
 //
 
 #include <cmath>
+#include <queue>
 #include "tree_create.h"
 
 
@@ -92,7 +93,7 @@ bool is_perfect_tree(TreeNode* root) {
 }
 
 bool is_perfect_tree_v2(TreeNode* root, int level) {
-    //all leaves mus be in the same level (last level)
+    //all leaves must be in the same level (last level)
     if (isLeaf(root))
         return level == 0;
     //check one child
@@ -107,6 +108,60 @@ bool is_perfect_tree_v2(TreeNode* root) {
     return is_perfect_tree_v2(root, level);
 }
 
+//optimum solution >> just count left and right and compare
+pair<bool, int> is_perfect_tree_v3(TreeNode* root) {
+    //empty tree
+    if (!root) return {false, 0};
+
+    //in case of leaf node
+    if (!root->left && !root->right) return {true, 1};
+
+    auto left = is_perfect_tree_v3(root->left);
+    auto right = is_perfect_tree_v3(root->right);
+
+    bool perfect = left.first && right.first && (left.second == right.second);
+
+    return {perfect, left.second + right.second + 1};
+}
+
+int updated_mx_diameter;
+int hight_of_tree(TreeNode* root) {
+    if (!root) return 0;
+
+    auto left = hight_of_tree(root->left);
+    auto right = hight_of_tree(root->right);
+
+    updated_mx_diameter = max(updated_mx_diameter, left + right);
+
+    return max(left, right) + 1;
+}
+int diameterOfBinaryTree(TreeNode* root) {
+    if (!root) return 0;
+    hight_of_tree(root);
+    return updated_mx_diameter;
+}
+
+void level_order_traversal(TreeNode* root) {
+    queue<TreeNode*> q;
+    q.push(root);
+    int level = 0;
+    while (!q.empty()) {
+        int sz = q.size();
+        cout << "level:" << level << "\n";
+        while (sz--) {
+            TreeNode* cur_top = q.front();
+            cout << cur_top->val << " ";
+            q.pop();
+
+            if (cur_top->left)
+                q.push(cur_top->left);
+            if (cur_top->right)
+                q.push(cur_top->right);
+        }
+        level++;
+        cout << "\n";
+    }
+}
 
 int main() {
 
@@ -116,7 +171,6 @@ int main() {
     tree.add( { 3, 7}, { 'R', 'R'});
     tree.add({3, 6}, {'R', 'L'});
 
-    cout << is_perfect_tree_v2(tree.root);
 
     return 0;
 }
