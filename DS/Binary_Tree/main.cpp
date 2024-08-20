@@ -2,8 +2,10 @@
 // Created by Admin on 8/11/2024.
 //
 
+#include <algorithm>
 #include <cmath>
 #include <queue>
+#include<deque>
 #include "tree_create.h"
 
 
@@ -163,14 +165,92 @@ void level_order_traversal(TreeNode* root) {
     }
 }
 
+vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+    vector<vector<int>> result;
+    deque<TreeNode*> q;
+    q.push_front(root);
+    int level = 0;
+    while (!q.empty()) {
+        int sz = q.size();
+        vector<int> current_level;
+        TreeNode *cur {};
+        while (sz--) {
+            if (level & 1) {
+                cur = q.back();
+                //cout << cur->val << " ";
+                current_level.push_back(cur->val);
+                q.pop_back();
+                if (cur->right) q.push_front(cur->right);
+                if (cur->left) q.push_front(cur->left);
+            } else {
+                cur = q.front();
+                //cout << cur->val << " ";
+                current_level.push_back(cur->val);
+                q.pop_front();
+                if (cur->left) q.push_back(cur->left);
+                if (cur->right) q.push_back(cur->right);
+            }
+        }
+        result.push_back(current_level);
+        ++level;
+    }
+    return result;
+}
+
+string paransizing_tree(TreeNode* root) {
+    if (!root) return "";
+
+    string result = "(" + to_string(root->val);
+
+    if (root->left) result += paransizing_tree(root->left);
+    else result += "()";
+
+    if (root->right) result += paransizing_tree(root->right);
+    else result += "()";
+
+    result += ")";
+
+    return result;
+}
+
+string canonicalizing_tree(TreeNode* root) {
+    if (!root) return "()";
+    string result = "(" + to_string(root->val);
+
+    vector<string> arrange;
+
+    if (left) arrange.push_back(canonicalizing_tree(root->left));
+    else arrange.push_back("()");
+
+    if (right) arrange.push_back(canonicalizing_tree(root->right));
+    else arrange.push_back("()");
+
+    sort(arrange.begin(), arrange.end());
+    for (int i = 0; i < arrange.size(); ++i) {
+        result += arrange[i];
+    }
+
+    result += ")";
+
+    return result;
+}
+
 int main() {
 
     BinaryTree tree(1);
+
+    /*
     tree.add( { 2, 4 }, { 'L', 'L'});
     tree.add( { 2, 5 }, {  'L', 'R' });
     tree.add( { 3, 7}, { 'R', 'R'});
     tree.add({3, 6}, {'R', 'L'});
+    */
 
+    tree.add({2} ,{'L'});
+    tree.add({3} ,{'R'});
+    auto res = canonicalizing_tree(tree.root);
+
+    cout << res << endl;
 
     return 0;
 }
