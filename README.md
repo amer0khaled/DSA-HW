@@ -7,7 +7,6 @@ and my solution to some of the coding challenges, I am still learning
 
 Languages Used
 ------------------------------------------
-- Java
 - C++
 
 Data Structures
@@ -15,3 +14,4 @@ Data Structures
 - Vector
 - Single LinkedList
 - Double LinkedList
+- Binary Tree
