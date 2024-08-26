@@ -61,6 +61,4 @@ struct BinaryTree {
 
 };
 
-
-
 #endif //BINARY_TREE_TREE_CREATE_H

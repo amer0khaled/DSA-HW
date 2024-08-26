@@ -235,22 +235,62 @@ string canonicalizing_tree(TreeNode* root) {
     return result;
 }
 
-int main() {
+string in_order_tree(TreeNode* root) {
+    static string s = "";
+    if (root->left) in_order_tree(root->left);
+    s += to_string(root->val);
+    if (root->right) in_order_tree(root->right);
+    return s;
+}
 
+//get in-order tree and check palindrome string
+bool isSymmetric(TreeNode *root) {
+    if (!root) return false;
+
+    auto res = in_order_tree(root);
+    cout << res << endl;
+    //check palindrome
+    for (int i = 0, j = res.size() - 1; i < j; ++i, --j)
+        if (res[i] != res[j]) return false;
+
+    return true;
+}
+
+//recursive solution
+bool is_mirror(TreeNode* root1, TreeNode* root2) {
+    if (!root1 && !root2) return true;
+    if ((!root1 && root2) || (root1 && !root2) || (root1->val != root2->val))
+        return false;
+
+    return is_mirror(root1->left, root2->right) && is_mirror(root1->right, root2->left);
+}
+
+bool isSymmetric_v2(TreeNode* root) {
+    if (!root)
+        return false;
+    return is_mirror(root->left, root->right);
+}
+
+int main() {
     BinaryTree tree(1);
 
-    /*
-    tree.add( { 2, 4 }, { 'L', 'L'});
-    tree.add( { 2, 5 }, {  'L', 'R' });
-    tree.add( { 3, 7}, { 'R', 'R'});
-    tree.add({3, 6}, {'R', 'L'});
-    */
+    tree.add( { 2, 3, 5 }, { 'L', 'L', 'L'});
+    tree.add( { 2, 3, 6 }, {  'L', 'L', 'R' });
+    tree.add( { 2, 4, 8}, { 'L', 'R', 'R'});
+    tree.add({2, 4, 7}, {'L', 'R', 'L'});
+    tree.add({2, 4, 8} ,{'R', 'L', 'L'});
+    tree.add({2, 4, 7} ,{'R', 'L', 'R'});
+    tree.add({2, 3, 5} ,{'R', 'R', 'R'});
+    tree.add({2, 3, 6} ,{'R', 'R', 'L'});
+/*
+    tree.add({2, 2}, {'L', 'L'});
+    tree.add({2, 2}, {'R', 'L'});
+*/
 
-    tree.add({2} ,{'L'});
-    tree.add({3} ,{'R'});
-    auto res = canonicalizing_tree(tree.root);
+    //tree.print_inorder();
+    //cout << endl;
 
-    cout << res << endl;
+    cout << isSymmetric(tree.root) << endl;
 
     return 0;
 }
