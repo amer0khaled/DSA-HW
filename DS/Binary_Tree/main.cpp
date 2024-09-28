@@ -391,6 +391,37 @@ bool isCompleteTree(TreeNode* root) {
 }
 
 
+unordered_map<string, int> freq;
+vector<TreeNode*> result;
+string serializationTree(TreeNode* root) {
+    if (!root) return "()";
+    string s;
+    s = "(" + to_string(root->val);
+
+    if (root->left)
+        s += serializationTree(root->left);
+    else
+        s += "()";
+    if (root->right)
+        s += serializationTree(root->right);
+    else
+        s += "()";
+    s += ")";
+
+    if (freq[s]++ == 1)
+        result.push_back(root);
+
+    return s;
+}
+
+vector<TreeNode*> findDuplicateSubtrees(TreeNode* root) {
+    if (!root) return {};
+
+    serializationTree(root);
+
+    return result;
+}
+
 
 int main()
 {
