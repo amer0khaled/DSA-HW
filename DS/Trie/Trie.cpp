@@ -3,6 +3,8 @@
 //
 
 #include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
 /*
@@ -101,4 +103,35 @@ public:
         // if the execution reaches here so the prefix exists
         return true;
     }
+
+    // Easy P2
+    string first_word_prefix(const string &str) {
+        TrieNode* node = root;
+        string result = "";
+
+        for (int i = 0; i < str.size(); ++i) {
+            if (node->containsKey(str[i])) {
+                result += str[i];
+                node = node->getReference(str[i]);
+            }
+            else
+                break;
+        }
+        if (result.empty())
+            return str;
+        return result;
+    }
+
+
 };
+
+int main() {
+    Trie trie;
+
+    trie.insert("xyz");
+    trie.insert("xyeA");
+    trie.insert("a");
+    trie.insert("bc");
+
+    cout << trie.first_word_prefix("bcw");
+}
