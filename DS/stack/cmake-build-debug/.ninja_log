@@ -1,0 +1,18 @@
+# ninja log v6
+1	232	1726321507099878900	CMakeFiles/stack.dir/implementation_in_cpp/stack_arrayBased.cpp.o	4ea3e95d69d976f9
+2	250	1726321507100449300	CMakeFiles/stack.dir/implementation_in_cpp/stack_singleLinkedListBased.cpp.o	53f7011b324aef4c
+3	313	1726487200168391400	CMakeFiles/stack.dir/implementation_in_cpp/stack_arrayBased.cpp.o	4ea3e95d69d976f9
+4	340	1726487200169002400	CMakeFiles/stack.dir/implementation_in_cpp/stack_singleLinkedListBased.cpp.o	53f7011b324aef4c
+166	585	1726487237624573700	CMakeFiles/stack.dir/implementation_in_cpp/stack_arrayBased.cpp.o	4ea3e95d69d976f9
+585	649	1726487237969382500	stack	b6ec75e27e861cd0
+18	418	1726576761506837900	CMakeFiles/stack.dir/implementation_in_cpp/stack_arrayBased.cpp.o	4ea3e95d69d976f9
+21	481	1726576761508691200	CMakeFiles/stack.dir/implementation_in_cpp/stack_singleLinkedListBased.cpp.o	53f7011b324aef4c
+481	551	1726576761968771500	stack	b6ec75e27e861cd0
+33	766	1726577993870083000	CMakeFiles/stack.dir/implementation_in_cpp/stack_singleLinkedListBased.cpp.o	53f7011b324aef4c
+10	69	1726577994848081100	stack	b6ec75e27e861cd0
+27	613	1726578225350125400	CMakeFiles/stack.dir/implementation_in_cpp/stack_singleLinkedListBased.cpp.o	53f7011b324aef4c
+614	717	1726578225936421300	stack	b6ec75e27e861cd0
+67	32577	1726578441412929100	CMakeFiles/stack.dir/implementation_in_cpp/stack_singleLinkedListBased.cpp.o	53f7011b324aef4c
+32588	32921	1726578473931437700	stack	b6ec75e27e861cd0
+9	586	1726578547439199500	CMakeFiles/stack.dir/implementation_in_cpp/stack_singleLinkedListBased.cpp.o	53f7011b324aef4c
+587	671	1726578548016667400	stack	b6ec75e27e861cd0

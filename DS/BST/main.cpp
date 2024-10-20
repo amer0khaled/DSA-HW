@@ -2,6 +2,8 @@
 #include <queue>
 #include <vector>
 #include <algorithm>
+#include <stack>
+
 #include "tree_create.h"'
 using namespace std;
 
@@ -10,16 +12,17 @@ bool is_leaf(TreeNode* root) {
     return root && !root->left && !root->right;
 }
 
-int get_minimum(TreeNode* root) {
+TreeNode* get_minimum(TreeNode* root) {
     while (root && root->left) {
         root = root->left;
     }
-    return root->val;
+    return root;
 }
 
-int get_maximum(TreeNode* root) {
-    if (is_leaf(root)) return root->val;
-    return get_maximum(root->right);
+TreeNode* get_maximum(TreeNode* root) {
+    while (root && root->right)
+        root = root->right;
+    return root;
 }
 
 TreeNode* sortedArrayToBST(vector<int>& nums, int start, int end) {
@@ -95,7 +98,7 @@ pair<bool, int> find_successor(TreeNode* root, int target) {
     //successor min number on the right of me
     TreeNode* child = get_next(ancestors);
     if (child->right)
-        return make_pair(true, get_minimum(child->right));
+        return make_pair(true, get_minimum(child->right)->val);
 
     //climbing chain
     TreeNode* parent = get_next(ancestors);
@@ -104,13 +107,55 @@ pair<bool, int> find_successor(TreeNode* root, int target) {
 
     if (parent) return make_pair(true, parent->val);
     return make_pair(false, -1);
+}
 
+TreeNode* find_node(TreeNode* root, int target) {
+    if (!root) return nullptr;
+    if (root->val == target) return root;
+    if (root->val > target) return find_node(root->left, target);
+    if (root->val < target) return find_node(root->right, target);
+}
+
+TreeNode* delete_node(TreeNode* root, int target) {
+    if (!root) return nullptr;
+    if (root->val > target)
+        root->left = delete_node(root->left, target);
+    else if (root->val < target)
+        root->right = delete_node(root->right, target);
+    else {
+        TreeNode* tmp = root;
+        if (is_leaf(root))
+            root = nullptr;
+        else if (!root->left)
+            root = root->right;
+        else if (!root->right)
+            root = root->left;
+        else {
+            TreeNode* mn = get_minimum(root->right);
+            root->val = mn->val;
+            root->right = delete_node(root->right, mn->val);
+            tmp = nullptr;
+        }
+
+        if (tmp) delete tmp;
+    }
+    return root;
 }
 
 int main() {
-    vector<int> nums = {-10,-3,0,5,9};
-    auto t = sortedArrayToBST(nums);
 
-    //print_preorder(t);
+    BinaryTree tree(10);
+    tree.add({8, 4}, {'L', 'L'});
+    tree.add({30, 70}, {'R', 'R'});
+    tree.add({8, 9}, {'L', 'R'});
+    tree.add({30, 20}, {'R', 'L'});
+
+    print_inorder(tree.root);
+    cout << endl;
+
+    auto t= delete_node(tree.root, 30);
+    
+    print_inorder(t);
+
     return 0;
 }

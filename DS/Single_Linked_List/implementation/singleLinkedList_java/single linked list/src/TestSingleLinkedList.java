@@ -1,22 +1,28 @@
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.TreeSet;
+
 public class TestSingleLinkedList {
 
     public static void main(String[] args) {
 
+        Scanner scanner = new Scanner(System.in);
         SingleLinkedList list = new SingleLinkedList();
 
-        for (int val = 10; val < 60; val += 10){
+        for (int i = 0; i < 5; ++i ) {
+            int val = scanner.nextInt();
             list.insertEnd(val);
         }
 
-        System.out.println("\nlist before:\n");
-        list.print(list.getHead());
+        list.debugPrintList("list before");
+        System.out.println("length: " + list.getLength());
 
-        list.removeNode(3);
 
-        System.out.println("\nlist after:\n");
-        list.print(list.getHead());
+        list.deleteDuplicates(list.getHead());
 
-        System.out.println("length = "+ list.getLength());
+
+        list.debugPrintList("\nlist after");
+        System.out.println("length: " + list.getLength());
 
         System.out.println("\n\nNo Run Time Error\n\n");
 

@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class SingleLinkedList{
     private Node head;
     private Node tail;
@@ -8,6 +10,22 @@ public class SingleLinkedList{
         this.tail = null;
         this.length = 0;
     }
+
+    /******************for testing******************/
+    private List<Node> debugData = new ArrayList<>();
+
+    private void debugAddNode(Node node){
+        debugData.add(node);
+    }
+
+    private void debugRemoveNode(Node node){
+        if (debugData.contains(node))
+            System.out.println("Node does not exist");
+        else
+            debugData.remove(node);
+    }
+
+    /***********************************************/
 
     public Node getHead() {
         return head;
@@ -43,19 +61,19 @@ public class SingleLinkedList{
             tail.setNext(null);
         }
         ++this.length;
-
+        debugAddNode(node);
     }
 
     public void insertInIndx(int data, int indx){
 
-        //index at tail
-        if (indx >= this.length){
-            insertEnd(data);
+        //invalid index
+        if (indx < 0){
             return;
         }
 
-        //invalid index
-        if (indx < 0){
+        //index at tail
+        if (indx >= this.length){
+            insertEnd(data);
             return;
         }
 
@@ -66,6 +84,7 @@ public class SingleLinkedList{
             node.setNext(this.head);
             this.head = node;
             this.length++;
+            debugAddNode(node);
             return;
         }
 
@@ -75,6 +94,7 @@ public class SingleLinkedList{
             prev.setNext(node);
             node.setNext(this.tail);
             this.length++;
+            debugAddNode(node);
             return;
         }
 
@@ -82,11 +102,12 @@ public class SingleLinkedList{
         Node next = getNthNode(indx);
         prev.setNext(node);
         node.setNext(next);
+        debugAddNode(node);
         this.length++;
     }
 
     //returns the first node have the wanted data.
-    public int searchNode(int data){
+    public int searchNodeByIndex(int data){
         int nodeIndx = 0;
         for (Node curr = this.head; curr != null; curr = curr.getNext()){
             if (curr.getData() == data){
@@ -101,6 +122,7 @@ public class SingleLinkedList{
         int temp = node1.getData();
         node1.setData(node2.getData());
         node2.setData(temp);
+        debugVerifyDataIntegrity();
     }
     public int improveSearch(int data){
         int nodeIndx = 0;
@@ -117,6 +139,7 @@ public class SingleLinkedList{
             }
             ++nodeIndx;
         }
+        debugVerifyDataIntegrity();
         return -1;
     }
 
@@ -162,6 +185,7 @@ public class SingleLinkedList{
         if (this.length == 1 && indx == 0){
             this.head = this.tail = null;
             this.length--;
+            debugVerifyDataIntegrity();
             return;
         }
 
@@ -169,6 +193,7 @@ public class SingleLinkedList{
         if (this.length > 1 && indx == 0){
             this.head = head.getNext();
             this.length--;
+            debugVerifyDataIntegrity();
             return;
         }
 
@@ -177,6 +202,7 @@ public class SingleLinkedList{
             Node prev = getNthNode(indx - 1);
             prev.setNext(null);
             this.length--;
+            debugVerifyDataIntegrity();
             return;
         }
 
@@ -185,8 +211,169 @@ public class SingleLinkedList{
         Node next = getNthNode(indx + 1);
         prev.setNext(next);
         this.length--;
+        debugVerifyDataIntegrity();
 
     }
+
+    public int recursiveMax(Node curr) {
+        if (curr == null)
+            return Integer.MIN_VALUE;
+        return Math.max(curr.getData(), recursiveMax(curr.getNext()));
+    }
+
+    public void moveBack(int key) {
+
+        int len = this.length;
+        if (len <= 1) return;
+        int indx = 0;
+        while(len-- != 0) {
+
+            //get node
+            indx = searchNodeByIndex(key);
+            Node node = getNthNode(indx);
+
+            //node at head
+            if (node == head) {
+                tail.setNext(node);
+                head = node.getNext();
+                node.setNext(null);
+                tail = node;
+            }
+            //node at middle
+            else if (node != tail) {
+                Node prev = getNthNode(indx - 1);
+                prev.setNext(node.getNext());
+                tail.setNext(node);
+                node.setNext(null);
+                tail = node;
+            }
+        }
+        debugVerifyDataIntegrity();
+    }
+
+    public Node deleteDuplicates(Node head) {
+        if (head == null) return null;
+        HashSet<Integer> visited = new HashSet<>();
+        Node cur = head, prev = null;
+        while (cur != null) {
+            if (visited.contains(cur.getData()))
+                // Skip the duplicate node
+                prev.setNext(cur.getNext());
+            else {
+                // add node to visited
+                visited.add(cur.getData());
+                prev = cur; // move prev
+            }
+            cur = cur.getNext();
+        }
+        return head;
+    }
+
+    public Node getIntersectionNode(Node headA, Node headB) {
+        Node t1 = headA, t2 = headB;
+        while (t1 != t2) {
+            t1 = t1.getNext();
+            t2 = t2.getNext();
+
+            if (t1.equals(t2)) return t1;
+            if (t1.equals(null)) t1 = headB;
+            if (t2.equals(null)) t2 = headA;
+        }
+        return t1;
+    }
+
+    ////////////////////////for debugging////////////////////////////////
+
+    // Debug method to print node addresses and data
+    public void debugPrintAddress() {
+        for (Node cur = head; cur != null; cur = cur.getNext()) {
+            System.out.print(cur + "," + cur.getData() + "\t");
+        }
+        System.out.println();
+    }
+
+    // Debug method to print details of a specific node
+    public void debugPrintNode(Node node, boolean isSeparate) {
+        if (isSeparate)
+            System.out.print("Sep: ");
+        if (node == null) {
+            System.out.println("null");
+            return;
+        }
+        System.out.print(node.getData() + " ");
+        if (node.getNext() == null)
+            System.out.print("X ");
+        else
+            System.out.print(node.getNext().getData() + " ");
+
+        if (node == head)
+            System.out.println("head");
+        else if (node == tail)
+            System.out.println("tail");
+        else
+            System.out.println();
+    }
+
+    // Debug method to print the entire list with an optional message
+    public void debugPrintList(String msg) {
+        if (!msg.isEmpty())
+            System.out.println(msg);
+        for (Node node : debugData) {
+            debugPrintNode(node, false);
+        }
+        System.out.println("************");
+    }
+
+    // Convert list to a string representation
+    public String debugToString() {
+        if (length == 0)
+            return "";
+        StringBuilder sb = new StringBuilder();
+        for (Node cur = head; cur != null; cur = cur.getNext()) {
+            sb.append(cur.getData());
+            if (cur.getNext() != null)
+                sb.append(" ");
+        }
+        return sb.toString();
+    }
+
+    // Verify the integrity of the list
+    public void debugVerifyDataIntegrity() {
+        if (length == 0) {
+            assert head == null;
+            assert tail == null;
+            return;
+        }
+        assert head != null;
+        assert tail != null;
+        assert tail.getNext() == null;
+
+        if (length == 1) {
+            assert head == tail;
+        } else {
+            assert head != tail;
+
+            if (length == 2) {
+                assert head.getNext() == tail;
+            } else if (length == 3) {
+                assert head.getNext().getNext() == tail;
+            }
+        }
+
+        int len = 0;
+        Node prev = null;
+
+        for (Node curr = head; curr != null; prev = curr, curr = curr.getNext()) {
+            assert len < 10000; // Infinity cycle prevention
+            ++len;
+        }
+
+        assert length == len;
+        assert prev == tail;
+    }
+
+    // Add other necessary methods for your linked list here, like insertion, deletion, etc.
+
 
 
 }

@@ -2,42 +2,6 @@
 	"entries" : 
 	[
 		{
-			"name" : "BST_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/mnt/01DA79F9284F3C70/amer khaled/My Repos/DSA-HW/DS/BST/cmake-build-debug"
-		},
-		{
-			"name" : "BST_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "BST_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "/mnt/01DA79F9284F3C70/amer khaled/My Repos/DSA-HW/DS/BST"
-		},
-		{
 			"name" : "CMAKE_ADDR2LINE",
 			"properties" : 
 			[
@@ -91,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/01DA79F9284F3C70/amer khaled/My Repos/DSA-HW/DS/BST/cmake-build-debug"
+			"value" : "/mnt/01DA79F9284F3C70/amer khaled/My Repos/DSA-HW/DS/Single_Linked_List/implementation/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -151,7 +115,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/291/bin/cmake/linux/x64/bin/cmake"
+			"value" : "/snap/clion/292/bin/cmake/linux/x64/bin/cmake"
 		},
 		{
 			"name" : "CMAKE_CPACK_COMMAND",
@@ -163,7 +127,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/291/bin/cmake/linux/x64/bin/cpack"
+			"value" : "/snap/clion/292/bin/cmake/linux/x64/bin/cpack"
 		},
 		{
 			"name" : "CMAKE_CTEST_COMMAND",
@@ -175,7 +139,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/291/bin/cmake/linux/x64/bin/ctest"
+			"value" : "/snap/clion/292/bin/cmake/linux/x64/bin/ctest"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER",
@@ -579,7 +543,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/mnt/01DA79F9284F3C70/amer khaled/My Repos/DSA-HW/DS/BST/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "/mnt/01DA79F9284F3C70/amer khaled/My Repos/DSA-HW/DS/Single_Linked_List/implementation/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -639,7 +603,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/mnt/01DA79F9284F3C70/amer khaled/My Repos/DSA-HW/DS/BST"
+			"value" : "/mnt/01DA79F9284F3C70/amer khaled/My Repos/DSA-HW/DS/Single_Linked_List/implementation"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -691,7 +655,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "/snap/clion/291/bin/ninja/linux/x64/ninja"
+			"value" : "/snap/clion/292/bin/ninja/linux/x64/ninja"
 		},
 		{
 			"name" : "CMAKE_MODULE_LINKER_FLAGS",
@@ -879,7 +843,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "BST"
+			"value" : "implementation"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -923,7 +887,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/snap/clion/291/bin/cmake/linux/x64/share/cmake-3.29"
+			"value" : "/snap/clion/292/bin/cmake/linux/x64/share/cmake-3.29"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1188,6 +1152,42 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "TRUE"
+		},
+		{
+			"name" : "implementation_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/mnt/01DA79F9284F3C70/amer khaled/My Repos/DSA-HW/DS/Single_Linked_List/implementation/cmake-build-debug"
+		},
+		{
+			"name" : "implementation_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "implementation_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/mnt/01DA79F9284F3C70/amer khaled/My Repos/DSA-HW/DS/Single_Linked_List/implementation"
 		}
 	],
 	"kind" : "cache",

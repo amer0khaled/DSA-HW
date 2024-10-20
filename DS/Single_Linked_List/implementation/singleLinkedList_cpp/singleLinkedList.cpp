@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include <climits>
-
+#include <map>
 #include <vector>		// for debug
 #include <algorithm>
 #include <sstream>
@@ -91,6 +91,10 @@ public:
 
     Node* getTail(){
         return tail;
+    }
+
+    void setTail(Node *newTail) {
+        tail->next = newTail;
     }
 
     int getLength(){
@@ -249,6 +253,15 @@ public:
         }
     }
 
+
+    Node* mergeTwoLists(Node* list1, Node* list2) {
+        priority_queue <int, vector<int>, greater<int>> gq;
+
+    }
+
+
+
+
     ///////////////////////////////for testing///////////////////////////////////////////////
 
     // Below 2 deletes prevent copy and assign to avoid this mistake
@@ -343,6 +356,9 @@ public:
 };
 
 
+
+
+
 int main(){
 
     singleLinkedList list1;
@@ -350,12 +366,22 @@ int main(){
     for (int i = 0, value = 10; i < 1; ++i, value += 10){
         list1.insertEnd(value);
     }*/
-    
+
+    list1.insertEnd(3);
+    list1.insertEnd(2);
+    list1.insertEnd(5);
+    list1.insertEnd(-4);
+
+    list1.setTail(list1.get_nth_Node(1));
+
     list1.debug_print_list("\n\nList before doing any operatioin");
     cout << "List size before operations: " << list1.getLength() << "\n\n";
     cout << "\n\n";
 
-    list1.removeNode(0);
+    auto result = list1.hasCycle(list1.getHead());
+    cout << result << "\n";
+
+
     list1.debug_print_list("delete node");
     cout << "\n\n";
 

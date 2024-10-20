@@ -14,30 +14,30 @@ public:
 
      Stack_ArrayBased(int size) : size(size), top(-1), arr(new int[size]){}
 
-    int getTop(){
+    int getTop() {
         return top;
     }
 
-    int getSize(){
+    int getSize() {
         return size;
     }
 
-    bool isFull(){
+    bool isFull() {
         return (top >= size - 1);
     }
 
-    bool isEmpty(){
+    bool isEmpty() {
         return (top == -1);
     }
 
-    void displayStack(){
+    void displayStack() {
         for (int i = top; i >= 0; --i){
             cout << arr[i] << " ";
         }
         cout << "\n";
     }
     
-    void push(int val){
+    void push(int val) {
 
         //check if array full
         assert(("stack is full",!isFull()));
@@ -47,21 +47,18 @@ public:
         
     }
 
-    int pop(){
+    int pop() {
         //check if array is empty
         assert(("stack is empty",!isEmpty()));
 
         //get element then decrease top
         int val = arr[top--];
         return val;
-
     }
-
 };
 
-
-int main(){
-
+/*
+int main() {
 
     Stack_ArrayBased stack(5);
 
@@ -80,10 +77,6 @@ int main(){
     cout << stack.pop();
 
 
-
-
-
-
-
     return 0;
 }
+*/
