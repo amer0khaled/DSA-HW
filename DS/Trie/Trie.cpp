@@ -104,7 +104,7 @@ public:
         return true;
     }
 
-    // Easy P2
+    // Easy to Med P2
     string first_word_prefix(const string &str) {
         TrieNode* node = root;
         string result = "";
@@ -122,16 +122,52 @@ public:
         return result;
     }
 
+    // Easy to Med p5
+    void insert(const vector<string>& path) {
+        for (auto& it : path) {
+            insert(it);
+        }
+    }
+
+    bool subpath_exist(const vector<string> &path) {
+        for (auto& it : path) {
+            if (!search(it))
+                return false;
+        }
+        return true;
+    }
+
 
 };
 
 int main() {
-    Trie trie;
+    Trie tree;
 
-    trie.insert("xyz");
-    trie.insert("xyeA");
-    trie.insert("a");
-    trie.insert("bc");
+	vector<string> path;
 
-    cout << trie.first_word_prefix("bcw");
+	path = {"home", "software", "eclipse"};
+	tree.insert(path);
+
+	path = {"home", "software", "eclipse", "bin"};
+	tree.insert(path);
+
+	path = {"home", "installed", "gnu"};
+	tree.insert(path);
+
+	path = {"user", "mostafa", "tmp"};
+	tree.insert(path);
+
+	path = {"user", "mostafa", "tmp"};
+	cout << tree.subpath_exist(path) << "\n"; // 1
+
+	path = {"user", "mostafa"};
+	cout << tree.subpath_exist(path) << "\n"; // 1
+
+	path = {"user", "mostafa", "private"};
+	cout << tree.subpath_exist(path) << "\n"; // 0
+
+    path = {"user", "amer", "tmp"};
+	cout << tree.subpath_exist(path) << "\n"; // 0
+
+    return 0;
 }
