@@ -1,0 +1,3 @@
+/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/DS/AVL/cmake-build-debug/CMakeFiles/AVL.dir
+/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/DS/AVL/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/amer/Amer Khaled/amer khaled/My Repos/DSA-HW/DS/AVL/cmake-build-debug/CMakeFiles/rebuild_cache.dir
