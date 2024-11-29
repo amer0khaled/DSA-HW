@@ -21,8 +21,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f6a5dec6-0060-41fe-bced-047cd8265bb2" name="Changes" comment="solution of easy problem2">
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/.cmake/api/v1/reply/cache-v2-279c32e5a86691cc9a60.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/.cmake/api/v1/reply/cmakeFiles-v1-e77962a810b2a34643a1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/.cmake/api/v1/reply/codemodel-v2-bc4ce0d41b3ac7a971f4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/.cmake/api/v1/reply/directory-.-d0094a50bb2071803777.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/.cmake/api/v1/reply/index-2024-09-11T16-30-52-0597.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/.cmake/api/v1/reply/target-Binary_Tree-e85dc7c54b3da37e0c0b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/.cmake/api/v1/reply/toolchains-v1-f1b2b3b9642b509dfa7c.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/.ninja_log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/3.28.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/3.28.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/3.28.1/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/3.28.1/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/3.28.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/3.28.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/3.28.1/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/3.28.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/3.28.1/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/clion-Default-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/clion-Default-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/cmake.check_cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/cmake-build-default/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Binary_Tree/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Binary_Tree/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Trie.dir/Trie.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Trie.dir/Trie.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Trie.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Trie.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +96,7 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/amer khaled/My Repos/DSA-HW/DS/Trie",
+    "last_opened_file_path": "D:/amer khaled/test code/MasouraSheets/sheet1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,6 +123,8 @@
       <updated>1729440397285</updated>
       <workItem from="1729440398131" duration="1878000" />
       <workItem from="1729465661971" duration="2346000" />
+      <workItem from="1731957695796" duration="25000" />
+      <workItem from="1732034037580" duration="31000" />
     </task>
     <task id="LOCAL-00001" summary="solution of easy problem2">
       <option name="closed" value="true" />
